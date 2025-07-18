@@ -1,7 +1,5 @@
 # base/process.py
 
-import random
-
 class Process:
     def __init__(self, pid, input_value, live=True):
         self.pid = pid
@@ -15,5 +13,3 @@ class Process:
     def __repr__(self):
         return (f"Process({self.pid}, x={self.x}, y={self.y}, "
                 f"state={self.state}, round={self.round}, alive={self.alive}")
-        
-   
