@@ -8,8 +8,7 @@ class Process:
         self.alive = live
         self.state = {}
         self.pc = 0
-        self.round = 0
         
     def __repr__(self):
         return (f"Process({self.pid}, x={self.x}, y={self.y}, "
-                f"state={self.state}, round={self.round}, alive={self.alive}")
+                f"state={self.state}, alive={self.alive}")

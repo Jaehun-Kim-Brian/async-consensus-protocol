@@ -25,7 +25,7 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
     for p in config.processes.values():
         for target in config.processes:
             if target != p.pid:
-                message_system.send(p.pid, target, p.x)
+                message_system.send(target, (p.pid, 'vote', 1, p.x))
                 if log is not None:
                     log.append(f"{p.pid} sends input {p.x} to {target}")
                     
@@ -53,4 +53,4 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         print("Simulation finished (log disabled).")
                 
 if __name__=="__main__":
-    simulate_ben_or(log_enabled=True)
+    simulate_ben_or(rounds=150, log_enabled=True)
