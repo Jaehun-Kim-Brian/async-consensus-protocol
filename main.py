@@ -5,7 +5,7 @@ from base.message_system import MessageSystem
 from base.configuration import Configuration
 from base.event import Event
 
-from protocols.ben_or import ben_or_handler
+from protocols.ben_or import ben_or_handler, inject_future_messages
 
 import random
 
@@ -36,10 +36,13 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         msg = message_system.receive(target)
                 
         event = Event(target, msg)
-        event.apply(config, handler=ben_or_handler, log=log)
+        round_increased = event.apply(config, handler=ben_or_handler, log=log)
         
+        if round_increased:
+            inject_future_messages(config, target, log)
+            
         if log is not None:
-            log.append(f"[Step {step+1}] {config.snapshot()}")
+            log.append(f"\n[Step {step+1}] {config.snapshot()}")
             
         if len(config.decision_values()) == 1 and all(p.y in ['0', '1'] for p in config.processes.values()):
             if log is not None:
@@ -53,4 +56,4 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         print("Simulation finished (log disabled).")
                 
 if __name__=="__main__":
-    simulate_ben_or(rounds=150, log_enabled=True)
+    simulate_ben_or(rounds=50, log_enabled=True)

@@ -10,6 +10,18 @@ def majority_value(n, votes_list):
     else:
         return None
 
+def inject_future_messages(config, pid, log=None):
+    process = config.processes[pid]
+    state = process.state
+    current_r = state['round']
+    
+    if current_r in state.get('future', {}):
+        messages = state['future'].pop(current_r)
+        if log:
+            log.append(f"{pid} injecting {len(messages)} stored messages for round {current_r}")
+        for msg in messages:
+            event = Event(pid, m)
+            event.apply(config, handler=ben_or_handler, log=log)
 def ben_or_handler(config, process, message, t=1, log=None, animate=None):
     #according to "Another Advantage of Free Choice: Completely Asynchronous Agreement Protocols"    
     n = len(config.processes)
@@ -18,6 +30,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
     state.setdefault('round', 1)
     state.setdefault('votes', [])
     state.setdefault('decisions', [])
+    state.setdefault('future_message', {})
     
     r= state['round']
     
@@ -31,10 +44,16 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
     if message:
         sender, msg_type, msg_round, msg_value = message
         
-        if msg_round != r:
+        if msg_round < r:
             if log:
-                log.append(f"{process.pid} ignores message from {sender} (round message mismatch)")
+                log.append(f"{process.pid} ignores old message from {sender} (round={msg_round})")
             return
+        
+        if msg_round > r:
+            state['future_messages'].setdefault(msg_round, []).append(message)
+            if log:
+                log.append(f"{process.pid} stores future message from {sender} for round {msg_round}")
+            return 
         
         if msg_type == 'vote':
             state['votes'].append(msg_value)
@@ -45,7 +64,10 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
             state['decisions'].append(msg_value)
             if log:
                 log.append(f"{process.pid} received decision={msg_value} from {sender} in round {r}")
-  
+    
+    else: # Receive no message : no change
+        return
+    
     # 2. decide value when votes are sufficient
     if len(state['votes']) >= n-t:
         majority = majority_value(n, state['votes'])
@@ -56,14 +78,12 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                       
         for target in config.processes:
             if target != process.pid:
-                config.message_system.send(
-                    target, decision_msg
-                )
+                config.message_system.send(target, decision_msg)
                 if log:
-                    log.append(f"{process.pid} sends vote={process.state['votes']} to {target}")
+                    log.append(f"{process.pid} sends decison={decision_msg} to {target}")
         
         state['votes'].clear()
-        
+        return
     # 3. if receive more than N - t 'decide' messages, 
     if len(state['decisions']) >= n - t:
         counts = {}
@@ -83,7 +103,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                 state['round'] += 1
                 break
         else:
-            #There exists at leat one D-message    
+            #There exists at least one D-message    
             if counts: 
                 chosen = next(iter(counts))
                 process.x = chosen
@@ -100,10 +120,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
             state['decisions'].clear()
             state['round'] += 1
     
-    new_r = state['round']
-    for target in config.processes:
-        if target != process.pid:
-            msg = (process.pid, 'vote', new_r, process.x)
-            config.message_system.send(target, msg)
-            if log:
-                log.append(f"{process.pid} sends new vote={process.x} for round {new_r} to {target}.")
+        new_r = state['round']
+        if log:
+            log.append(f"{process.pid} advances to round {new_r}")
+        return True
