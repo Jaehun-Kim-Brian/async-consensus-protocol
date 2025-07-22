@@ -33,12 +33,11 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
     process_ids = list(config.processes.keys())
     for step in range(rounds):
         target = random.choice(process_ids)
-        msg = message_system.receive(target)
-                
+        msg = message_system.receive(target)   
         event = Event(target, msg)
-        round_increased = event.apply(config, handler=ben_or_handler, log=log)
+        round_advanced = event.apply(config, handler=ben_or_handler, log=log)
         
-        if round_increased:
+        if round_advanced:
             inject_future_messages(config, target, log)
             
         if log is not None:
