@@ -10,20 +10,26 @@ To address this, I decided to implement a **simple asynchronous consensus protoc
 
 ## Key Features 
 
-- Simulate asynchronous message delivery with random delays
-- Models consensus based on each process's input register
-- Allows for experimental setups that demonstrate **bialent/univalent configuration**
-- Logs and visualizes decision-making over time
-- Supports **animated visualization** of message passing and internal state transitions (via matplotlib)
+- Modular simulation of asynchronous systems (message buffers, process steps, event handlers)
+- Implementation of **Ben-Or's consensus protocol** using randomized decisions
+- Fine-grained logging and internal state tracking per process
+- Message delays and out-of-order delivery supported
+- Future-message buffer (for round-mismatched events)
+- Export of simulation logs in structured JSON format
+- Visualization of protocol runs as **animated `.gif` and `.mp4` files**
 
 ## How to Run
 
 ```bash
 # Install dependencies
 pip install matplotlib pillow
+sudo apt install ffmpeg  # Required for mp4 rendering
 
 #Run simulation
-python partial_correct_protocol.py
+python main.py
+
+#Visualize the Output
+python utils/visualizer.py
 ```
 
 - Execution logs will be save to ```output_log.txt```
@@ -31,17 +37,22 @@ python partial_correct_protocol.py
 
 ## References
 - Fischer, Lynch, Paterson (1985). *Impossibility of Distributed Consensus with one Faulty Process*.
+- Michael Ben-Or (1983). *Another Advantage of Free Choice: Completely Asynchronous Agreement Protocols*
 
 
-## Current Situation
-- The current simulator uses a majority-based decision logic, which is already in univalent states from the beginning
-- It's difficult to visually demonstrate FLP's key concept: the existence of bivalent configurations and indecisive runs
-- However, the simulator has strong educational and modeling value in terms of process design, event scheduling, and state transitions
+## Observation & Limitations
+- The simulator focuses on educational clarity rather than completeness of adversarial models.
+- Some setups converge too quickly to a decision, limiting visual demonstration of bivalence.
+- Indecisive configurations and Lemma 2/3 scenarios can be explored further through customized process failures or scheduling.
 
 
 ## Future Plans
 
-- Implement **randomized consensus** (Ben-Or protocol) for comparison
-- Extend the simulator to support **partial synchrony models** (e.g., timeouts, bounded delays)
-- Experimentally compare with practical consensus protocols like **PBFT, RAFT**
-- Explore implications for **blockchain and Web3 consensus**
+Add support for:
+- Partial synchrony models (timeouts, bounded delays)
+- Other consensus protocols: PBFT, RAFT, DLS
+- Fault injection and crash simulations
+
+Enhance visualization:
+- Differentiate message types by color
+- Highlight faulty or crashed nodes

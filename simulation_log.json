@@ -1,0 +1,4272 @@
+[
+  {
+    "step": 1,
+    "type": "initial_broadcast",
+    "from": "P1",
+    "to": "P2",
+    "value": 1
+  },
+  {
+    "step": 2,
+    "type": "initial_broadcast",
+    "from": "P1",
+    "to": "P3",
+    "value": 1
+  },
+  {
+    "step": 3,
+    "type": "initial_broadcast",
+    "from": "P2",
+    "to": "P1",
+    "value": 0
+  },
+  {
+    "step": 4,
+    "type": "initial_broadcast",
+    "from": "P2",
+    "to": "P3",
+    "value": 0
+  },
+  {
+    "step": 5,
+    "type": "initial_broadcast",
+    "from": "P3",
+    "to": "P1",
+    "value": 0
+  },
+  {
+    "step": 6,
+    "type": "initial_broadcast",
+    "from": "P3",
+    "to": "P2",
+    "value": 0
+  },
+  {
+    "step": 7,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "vote",
+      1,
+      1
+    ]
+  },
+  {
+    "step": 8,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "vote",
+      1,
+      1
+    ]
+  },
+  {
+    "step": 9,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 1,
+    "from": "P1",
+    "value": 1
+  },
+  {
+    "step": 9,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 10,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 11,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 12,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 1,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 13,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P1",
+    "round": 1,
+    "value": 0
+  },
+  {
+    "step": 14,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P2",
+    "round": 1,
+    "value": 0
+  },
+  {
+    "step": 14,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 15,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "vote",
+      1,
+      1
+    ]
+  },
+  {
+    "step": 16,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "vote",
+      1,
+      1
+    ]
+  },
+  {
+    "step": 17,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 1,
+    "from": "P1",
+    "value": 1
+  },
+  {
+    "step": 17,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 18,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 19,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 20,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 1,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 21,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P1",
+    "round": 1,
+    "value": 0
+  },
+  {
+    "step": 22,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P3",
+    "round": 1,
+    "value": 0
+  },
+  {
+    "step": 22,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 23,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 24,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 24,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 25,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": null
+  },
+  {
+    "step": 26,
+    "type": "receive",
+    "pid": "P2",
+    "message": null
+  },
+  {
+    "step": 26,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {}
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 27,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 28,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 29,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 1,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 29,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 30,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": null
+  },
+  {
+    "step": 31,
+    "type": "receive",
+    "pid": "P2",
+    "message": null
+  },
+  {
+    "step": 31,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 32,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": null
+  },
+  {
+    "step": 33,
+    "type": "receive",
+    "pid": "P2",
+    "message": null
+  },
+  {
+    "step": 33,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 34,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 35,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 36,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 1,
+    "from": "P2",
+    "value": "?"
+  },
+  {
+    "step": 36,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 37,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 38,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 39,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 1,
+    "from": "P3",
+    "value": "?"
+  },
+  {
+    "step": 39,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 40,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 41,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 41,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 42,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 43,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 43,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 44,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 45,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "vote",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 46,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 1,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 47,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P2",
+    "round": 1,
+    "value": 1
+  },
+  {
+    "step": 48,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P3",
+    "round": 1,
+    "value": 1
+  },
+  {
+    "step": 48,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 49,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "decide",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 50,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "decide",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 51,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 1,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 52,
+    "type": "update_x_from_D",
+    "pid": "P3",
+    "round": 1,
+    "new_x": 0
+  },
+  {
+    "step": 53,
+    "type": "advance_round",
+    "pid": "P3",
+    "new_round": 2
+  },
+  {
+    "step": 54,
+    "type": "send_vote",
+    "from": "P3",
+    "to": "P1",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 55,
+    "type": "send_vote",
+    "from": "P3",
+    "to": "P2",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 55,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 56,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 57,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 57,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 58,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 59,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 59,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 60,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "decide",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 61,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "decide",
+      1,
+      0
+    ]
+  },
+  {
+    "step": 62,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 1,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 63,
+    "type": "update_x_from_D",
+    "pid": "P2",
+    "round": 1,
+    "new_x": 0
+  },
+  {
+    "step": 64,
+    "type": "advance_round",
+    "pid": "P2",
+    "new_round": 2
+  },
+  {
+    "step": 65,
+    "type": "send_vote",
+    "from": "P2",
+    "to": "P1",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 66,
+    "type": "send_vote",
+    "from": "P2",
+    "to": "P3",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 66,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 67,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": null
+  },
+  {
+    "step": 68,
+    "type": "receive",
+    "pid": "P1",
+    "message": null
+  },
+  {
+    "step": 68,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 69,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 70,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 71,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 1,
+    "from": "P3",
+    "value": "?"
+  },
+  {
+    "step": 71,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 72,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 73,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 74,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 2,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 74,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 1,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 75,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 76,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "decide",
+      1,
+      "?"
+    ]
+  },
+  {
+    "step": 77,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 1,
+    "from": "P2",
+    "value": "?"
+  },
+  {
+    "step": 78,
+    "type": "random_x_choice",
+    "pid": "P1",
+    "round": 1,
+    "new_x": 1
+  },
+  {
+    "step": 79,
+    "type": "advance_round",
+    "pid": "P1",
+    "new_round": 2
+  },
+  {
+    "step": 80,
+    "type": "send_vote",
+    "from": "P1",
+    "to": "P2",
+    "round": 2,
+    "value": 1
+  },
+  {
+    "step": 81,
+    "type": "send_vote",
+    "from": "P1",
+    "to": "P3",
+    "round": 2,
+    "value": 1
+  },
+  {
+    "step": 81,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 82,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "vote",
+      2,
+      1
+    ]
+  },
+  {
+    "step": 83,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "vote",
+      2,
+      1
+    ]
+  },
+  {
+    "step": 84,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 2,
+    "from": "P1",
+    "value": 1
+  },
+  {
+    "step": 85,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P1",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 86,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P3",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 86,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 87,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 88,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 89,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 2,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 89,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 90,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 91,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 92,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 2,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 92,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 93,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 94,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "vote",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 95,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 2,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 96,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P2",
+    "round": 2,
+    "value": 1
+  },
+  {
+    "step": 97,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P3",
+    "round": 2,
+    "value": 1
+  },
+  {
+    "step": 97,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 98,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "vote",
+      2,
+      1
+    ]
+  },
+  {
+    "step": 99,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "vote",
+      2,
+      1
+    ]
+  },
+  {
+    "step": 100,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 2,
+    "from": "P1",
+    "value": 1
+  },
+  {
+    "step": 101,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P1",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 102,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P2",
+    "round": 2,
+    "value": 0
+  },
+  {
+    "step": 102,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 103,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "decide",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 104,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "decide",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 105,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 2,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 105,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 106,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 107,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 107,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 108,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 109,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 110,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 2,
+    "from": "P2",
+    "value": "?"
+  },
+  {
+    "step": 110,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 111,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 112,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 113,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 2,
+    "from": "P2",
+    "value": "?"
+  },
+  {
+    "step": 113,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 1,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 114,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 115,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 116,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 2,
+    "from": "P3",
+    "value": "?"
+  },
+  {
+    "step": 117,
+    "type": "random_x_choice",
+    "pid": "P1",
+    "round": 2,
+    "new_x": 0
+  },
+  {
+    "step": 118,
+    "type": "advance_round",
+    "pid": "P1",
+    "new_round": 3
+  },
+  {
+    "step": 119,
+    "type": "send_vote",
+    "from": "P1",
+    "to": "P2",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 120,
+    "type": "send_vote",
+    "from": "P1",
+    "to": "P3",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 120,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 121,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": null
+  },
+  {
+    "step": 122,
+    "type": "receive",
+    "pid": "P1",
+    "message": null
+  },
+  {
+    "step": 122,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 123,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "decide",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 124,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "decide",
+      2,
+      0
+    ]
+  },
+  {
+    "step": 125,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 2,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 126,
+    "type": "update_x_from_D",
+    "pid": "P3",
+    "round": 2,
+    "new_x": 0
+  },
+  {
+    "step": 127,
+    "type": "advance_round",
+    "pid": "P3",
+    "new_round": 3
+  },
+  {
+    "step": 128,
+    "type": "send_vote",
+    "from": "P3",
+    "to": "P1",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 129,
+    "type": "send_vote",
+    "from": "P3",
+    "to": "P2",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 129,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 130,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": null
+  },
+  {
+    "step": 131,
+    "type": "receive",
+    "pid": "P1",
+    "message": null
+  },
+  {
+    "step": 131,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 2,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 132,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 133,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "decide",
+      2,
+      "?"
+    ]
+  },
+  {
+    "step": 134,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 2,
+    "from": "P3",
+    "value": "?"
+  },
+  {
+    "step": 135,
+    "type": "update_x_from_D",
+    "pid": "P2",
+    "round": 2,
+    "new_x": 0
+  },
+  {
+    "step": 136,
+    "type": "advance_round",
+    "pid": "P2",
+    "new_round": 3
+  },
+  {
+    "step": 137,
+    "type": "send_vote",
+    "from": "P2",
+    "to": "P1",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 138,
+    "type": "send_vote",
+    "from": "P2",
+    "to": "P3",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 138,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 139,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 140,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 141,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 3,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 141,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 142,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 143,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 144,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 3,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 144,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 145,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 146,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 147,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 3,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 147,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 148,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 149,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 150,
+    "type": "receive_vote",
+    "pid": "P1",
+    "round": 3,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 151,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P2",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 152,
+    "type": "send_decision",
+    "from": "P1",
+    "to": "P3",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 152,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 153,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 154,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 155,
+    "type": "receive_vote",
+    "pid": "P3",
+    "round": 3,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 156,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P1",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 157,
+    "type": "send_decision",
+    "from": "P3",
+    "to": "P2",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 157,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 158,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P1",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 159,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P1",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 160,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 3,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 160,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 161,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 162,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 162,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 163,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 164,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 164,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 165,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 166,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "vote",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 167,
+    "type": "receive_vote",
+    "pid": "P2",
+    "round": 3,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 168,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P1",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 169,
+    "type": "send_decision",
+    "from": "P2",
+    "to": "P3",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 169,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 170,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P3",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 171,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P3",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 172,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 3,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 172,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 173,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 174,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 174,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 175,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 176,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 176,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 177,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": [
+      "P2",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 178,
+    "type": "receive",
+    "pid": "P1",
+    "message": [
+      "P2",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 179,
+    "type": "receive_decision",
+    "pid": "P1",
+    "round": 3,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 180,
+    "type": "decide_final",
+    "pid": "P1",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 180,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 181,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": [
+      "P2",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 182,
+    "type": "receive",
+    "pid": "P3",
+    "message": [
+      "P2",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 183,
+    "type": "receive_decision",
+    "pid": "P3",
+    "round": 3,
+    "from": "P2",
+    "value": 0
+  },
+  {
+    "step": 184,
+    "type": "decide_final",
+    "pid": "P3",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 184,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 185,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P1",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 186,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P1",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 187,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 3,
+    "from": "P1",
+    "value": 0
+  },
+  {
+    "step": 187,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 188,
+    "type": "delivery_attemp",
+    "receiver": "P3",
+    "message": null
+  },
+  {
+    "step": 189,
+    "type": "receive",
+    "pid": "P3",
+    "message": null
+  },
+  {
+    "step": 189,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 190,
+    "type": "delivery_attemp",
+    "receiver": "P1",
+    "message": null
+  },
+  {
+    "step": 191,
+    "type": "receive",
+    "pid": "P1",
+    "message": null
+  },
+  {
+    "step": 191,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 192,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": null
+  },
+  {
+    "step": 193,
+    "type": "receive",
+    "pid": "P2",
+    "message": null
+  },
+  {
+    "step": 193,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": "b",
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 194,
+    "type": "delivery_attemp",
+    "receiver": "P2",
+    "message": [
+      "P3",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 195,
+    "type": "receive",
+    "pid": "P2",
+    "message": [
+      "P3",
+      "decide",
+      3,
+      0
+    ]
+  },
+  {
+    "step": 196,
+    "type": "receive_decision",
+    "pid": "P2",
+    "round": 3,
+    "from": "P3",
+    "value": 0
+  },
+  {
+    "step": 197,
+    "type": "decide_final",
+    "pid": "P2",
+    "round": 3,
+    "value": 0
+  },
+  {
+    "step": 197,
+    "type": "snapshot",
+    "state": {
+      "P1": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P2": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      },
+      "P3": {
+        "x": 0,
+        "y": 0,
+        "alive": true,
+        "state": {
+          "round": 3,
+          "votes": [],
+          "decisions": [
+            0,
+            0
+          ],
+          "future": {}
+        }
+      }
+    }
+  },
+  {
+    "step": 198,
+    "type": "final",
+    "message": "All processes decided"
+  }
+]

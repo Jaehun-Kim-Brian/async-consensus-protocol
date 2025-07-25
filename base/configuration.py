@@ -27,13 +27,12 @@ class Configuration:
     
     def get_state_summary(self):
         summary = {}
-        for pid, p in self.processes in self.processes.items():
+        for pid, p in self.processes.items():
             summary[pid] = {
                 'x': p.x,
                 'y': p.y,
                 'alive': p.alive,
-                'state': p.state.copy(),
-                'round': p.round
+                'state': p.state.copy()
             }
         return summary
     
