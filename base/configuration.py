@@ -13,7 +13,7 @@ class Configuration:
         self.doen = 0 #number of processes that are in decision state
         
     def decision_values(self):
-        return {p.y for p in self.processes.values() if p.y in ['0', '1']}
+        return {p.y for p in self.processes.values() if p.y in [0, 1]}
     
     def snapshot(self):
         # document about current configuration summary
@@ -36,3 +36,6 @@ class Configuration:
                 'round': p.round
             }
         return summary
+    
+    def all_decided(self):
+        return all(p.y in [0, 1] for p in self.processes.values())

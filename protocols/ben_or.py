@@ -10,9 +10,10 @@ def majority_value(n, votes_list):
     else:
         return None
             
-def ben_or_handler(config, process, message, t=1, log=None, animate=None):
+def ben_or_handler(config, process, message, handler_args=None, t=1, log=None, animate=None):
     #according to "Another Advantage of Free Choice: Completely Asynchronous Agreement Protocols"    
-    n = len(config.processes)
+    n = handler_args.get('n', len(config.processes))
+    t = handler_args.get('t', 1)
     state = process.state
     state.setdefault('round', 1)
     state.setdefault('votes', [])
@@ -26,7 +27,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
     if process.y in ['0', '1']:
         if log:
             log.append(f"{process.pid} has already decided y = {process.y}. No change.")
-        return False
+        return round_advanced
     
     # 1. receive message 
     if message:
@@ -34,12 +35,12 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
         if msg_round < r:
             if log:
                 log.append(f"{process.pid} ignores old message from {sender} (round={msg_round})")
-            return False
+            return round_advanced
         if msg_round > r:
             state['future'].setdefault(msg_round, []).append(message)
             if log:
                 log.append(f"{process.pid} stores future message from {sender} for round {msg_round}")
-            return False
+            return round_advanced
         if msg_type == 'vote':
             state['votes'].append(msg_value)
             if log:
@@ -50,7 +51,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                 log.append(f"{process.pid} received decision={msg_value} from {sender} in round {r}")
     
     else: # Receive no message : no change
-        return False
+        return round_advanced
     
     # 2. decide value when votes are sufficient
     if len(state['votes']) >= n-t:
@@ -64,7 +65,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                 if log:
                     log.append(f"{process.pid} sends decison={decision_msg} to {target}")
         state['votes'].clear()
-        return False
+        return round_advanced
     
     # 3. if receive more than N - t 'decide' messages, 
     if len(state['decisions']) >= n - t:
@@ -79,7 +80,7 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                 process.y = v
                 if log:
                     log.append(f"{process.pid} DECIDES {v} in round {r}")
-                return False
+                return round_advanced
 
         #There exists at least one D-message    
         if counts: 
@@ -110,9 +111,9 @@ def ben_or_handler(config, process, message, t=1, log=None, animate=None):
                 if log:
                     log.append(f"{process.pid} sends new vote={process.x} to {target} (round {new_r})")
     
-        return True
+        return round_advanced
     else:
-        return False
+        return round_advanced
     
 
 def inject_future_messages(config, pid, log=None):

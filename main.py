@@ -9,9 +9,13 @@ from protocols.ben_or import ben_or_handler, inject_future_messages
 
 import random
 
-def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
+def simulate_ben_or(n=3, t=1, rounds=30, seed=None, log_enabled=True):
     if seed is not None:
         random.seed(seed)
+        
+    if not(0 <= t and n > 2*t):
+        raise ValueError(f"Invalid parameters : Ben-Or requires n > 2t and t ≥ 0. Got n={n}, t={t}")
+    handler_args = {'n': n, 't' : t}
         
     # 1. Generate processes & message system
     processes = [Process(f'P{i+1}', input_value=random.choice([0,1])) for i in range(n)]
@@ -35,7 +39,7 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         target = random.choice(process_ids)
         msg = message_system.receive(target)   
         event = Event(target, msg)
-        round_advanced = event.apply(config, handler=ben_or_handler, log=log)
+        round_advanced = event.apply(config, handler=ben_or_handler, handler_args=handler_args, log=log)
         
         if round_advanced:
             inject_future_messages(config, target, log)
@@ -43,7 +47,7 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         if log is not None:
             log.append(f"\n[Step {step+1}] {config.snapshot()}")
             
-        if len(config.decision_values()) == 1 and all(p.y in ['0', '1'] for p in config.processes.values()):
+        if config.all_decided():
             if log is not None:
                 log.append(f"All process decided on {list(config.decision_values())[0]}.")
             break
@@ -55,4 +59,4 @@ def simulate_ben_or(n=3, rounds=30, seed=None, log_enabled=True):
         print("Simulation finished (log disabled).")
                 
 if __name__=="__main__":
-    simulate_ben_or(rounds=50, log_enabled=True)
+    simulate_ben_or(rounds=100, log_enabled=True)

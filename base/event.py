@@ -5,7 +5,7 @@ class Event:
         self.pid = pid
         self.message = message
         
-    def apply(self, config, handler, log=None, animate=None):
+    def apply(self, config, handler, handler_args=None, log=None, animate=None):
         # apply this event (pid receives message) to the configuration
         # 'handler' is a parameter that contains protocol deciding logic
         
@@ -20,7 +20,7 @@ class Event:
             log.append(f"Event: {self.pid} receives {self.message}")
             
         # delegate a handler
-        handler(config, process, self.message, log=log, animate=animate)
+        handler(config, process, self.message, handler_args=handler_args, log=log, animate=animate)
         
         config.round += 1
         config.id = f"C{config.round}"
